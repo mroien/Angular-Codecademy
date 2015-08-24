@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic|Oswald' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/shared/angular.min.js"></script>
+    <title>Pizza Planet</title>
+  </head>
+  <body ng-app="PizzaPlanetApp">
+    <div class="header">
+      <h1><span>Pizza</span><span>Planet</span></h1>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+        <h1>Specials for {{ today | date }}</h1>
+        
+        <h2>Appetizers</h2>
+         <div class="appetizers row" ng-repeat="apps in appetizers">
+          <div class="item col-md-9">
+            <h3 class="name">{{ apps.name }} </h3>
+            <p class="description"> {{ apps.description }} </p>
+          </div>
+          <div class="price col-md-3">
+            <p class="price"> {{ apps.price | currency }} </p>
+          </div>
+        </div>
+        <h2>Dishes</h2>
+        <div class="mains row" ng-repeat="dishes in mains">
+          <div class="item col-md-9">
+            <h3 class="name">{{dishes.name}}</h3>
+            <p class="description">{{dishes.description}}</p>
+          </div>
+          <div class="price col-md-3">
+            <p class="price">{{dishes.price | currency}}
+          </div>
+        </div>
+        <h2>Extras</h2>
+        <div class="mains row" ng-repeat="extra in extras">
+          <div class="item col-md-9">
+            <h3 class="name">{{extra.name}}</h3>
+            <p class="description">{{extra.description}}</p>
+          </div>
+          <div class="price col-md-3">
+            <p class="price">{{extra.price | currency}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+    </div>
+    
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+  </body>
