@@ -6,6 +6,7 @@ app.config(function ($routeProvider) {
       controller: 'HomeController', 
       templateUrl: 'views/home.html' 
     })
+    // :id variable part name
   .when('/photos/:id', {
     controller: 'PhotoController',
     templateUrl: 'views/photo.html'
